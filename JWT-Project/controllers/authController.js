@@ -2,30 +2,34 @@
 
 const jwt = require("jsonwebtoken");
 const login = (req, res) => {
-    const { usename, password } = req.body;
+    const { username, password } = req.body;
 
     if (
-        usename === "admin" &&
+        username === "admin" &&
         password === "123"
     ) {
         const token = jwt.sign(
             {
                 username
             },
-            "mysecretkey",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzgwODQwMjcxLCJleHAiOjE3ODA4NDM4NzF9.5YEcMYcFg98omYL_2wuWKb7Zpyd47hJDcOkkDVxheNo",
             {
                 expiresIn: "1h"
             }
         );
-        return res.json({
+        return res.status(200).json({
+            success: true,
             token
         });
     }
     res.status(401).json({
-        message: "invalid credentialas"
+        success: false,
+        message: "Invalid credentials"
     });
 };
 
 module.exports = {
     login
 };
+
+
