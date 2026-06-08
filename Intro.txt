@@ -1,0 +1,838 @@
+1. Introduction to React.js
+    React.js is a javascript library used to build Interactive user Interfaces(UI)
+
+    it was developed by Meta 
+
+    => mainly used for :
+    1. Single page Application(SPA)
+    2. Dynamic website 
+    3. dashboard Applications
+    4. Real-Time Applications
+
+    => Advantages: 
+    1. Component based Architecture
+        React divides UI into re-Usable Components.
+        example:
+        1.Navbar
+        2.Footer 
+        3.Sidebar
+        4.Login Form
+
+    2. Fast Rendering
+        React uses:
+            Virtual DOM
+            insted of uploading the whole page 
+                * react updates only changed elements.
+                * Improves performance
+
+    3. Reusable Code
+        One component can be reused in many pages.
+        example:
+            <Button />
+
+        used in :
+            Login 
+            Register 
+            DashBoard
+            Payment Page    
+    
+    4. Easy State Management
+            React provide hooks and state Handling.
+
+    5. Huge Community Support
+        Larger Eco-System
+            1. libraryies 
+            2. Tools 
+            3. Documentations 
+            4. Jobs
+
+
+2. Components in React.Js
+
+what is a Component ?
+    Component is a reusable block of UI.
+
+    example :
+        header
+        sidebar
+        login form
+        product card
+
+types of Components:
+
+    1. Functional Component
+        Modern and most used.
+
+    JSX : javascript XML
+
+        function Welcome(){
+            return(
+                <div>
+                <h1>Welcome to MERN Session</h1>
+                <welcome/>
+                </div>
+            );
+        }
+
+    2. Class Component
+        Older Method.
+
+        import react, {component} from react;
+
+        class welcome extend component {
+            render(){
+                return <h1>Welcome to MERN Session</h1>
+            }
+        }
+        extend default welcome;
+
+Advantages(Components):
+
+    Advantages          Description
+
+    Reusable            use multiple times 
+    Maintainable        Easy to Debug
+    Modular             Separate Logic 
+    Scalable            Large Application
+
+example : E-Commerce Website 
+        Components 
+        Navabar , ProductCard, Cart, Footer, SideBar..ect
+
+src/
+ |-components/  
+ |   |-- Navbar.jsx
+ |   |-- Footer.jsx
+ |   |-- ProductCard.jsx
+ |
+ |-Pages/
+ |   |-- Home.jsx
+ |   |-- Login.jsx
+
+function StudentCard(){
+    return(
+        <div>
+        <h1>Mubarak M</h1>
+        <p>MERN stack Developer</p>
+        </div>
+    );
+}
+
+3. Props: 
+    What are Props: 
+        props Means : Properties
+                        used to pass the data : parent -> Child Component
+
+why props?
+    prop make component
+        1. Dynamic 
+        2. Reusable
+        3. Flexible
+
+example:
+
+        parent component:
+
+        import student from './student';
+
+        function App(){
+            return(
+                <student name="Rahul", course = "MERN" />
+            );
+        }
+
+        Child Component :
+        
+        function Student(){
+            retun(
+                <h1>{Props.name}</h1>
+                <p>{Props.course}</p>
+            );
+        }
+        export default Student;
+
+
+        => Destructuring props
+
+        function Student{(name.course)}{
+            retun(
+                <h1>{name}</h1>
+                <p>{course}</p>
+            );
+        }
+        
+    Advantages:             Description: 
+
+    Reusablility            same component multiple data
+    Dynamic UI              Data Changes Automatically
+    Clean Code              Better readability
+
+    example :
+    one component many products.
+        product card:
+        <product name="Laptop , price= "50000" />
+        <product name="phone , price= "40000" />
+
+
+
+Assignment Quetion 1:
+
+Employee Details Card 
+    Employee Image 
+    Department
+    Salary
+    Experience
+
+4.State in React.js
+
+    what is State ?
+        State stores dynamic data inside a component.
+    
+    example :
+        Couter value 
+        user input 
+        login status 
+        cart items
+
+why state ?
+    without state?
+        * UI cannot change dynamically.
+    state make interactive
+
+how it works:
+    const[count, setCount] = useState(0);
+
+    * count     --> current state (state variable)
+    * setCount  --> update function (set state variable)
+    * 0         --> initial Value
+
+    Advantages of State :
+
+    Dynamic UI              Real Time updates 
+    Interactive Apps        User interaction 
+    Easy Data Handling      Store values 
+
+
+5. Event Handling In React.js
+    Handling User Action:
+        1.Click
+        2.Submit 
+        3.Hover
+        4.KeyBoard Input
+
+Common Event 
+
+    Event 
+        onClick()           -            Button Clicks
+        onChange()          -            Input change
+        onSubmit()          -            Form Submit
+        on MouseOver()      -            Hover
+        onKeyDown()         -            Keyboard Press
+
+------------------------------------------------------------
+Mini Project
+
+==> Feedback Form
+Features:
+    User enters feedback
+    Submit button
+    Display feedback
+
+==> Login Form
+Events handle:
+    Username input
+    Password input
+    Form submit
+
+
+6. React Hooks
+
+    1. what are Hooks ?
+        Hooks Allows Functinal Components to :
+            : Manage State
+            : Handle Lifecycle
+            : Access DOM
+        without class Components.
+
+types coverd: 
+    1. useState
+    2. useEffect
+    3. useRef
+
+useEffect Hook :
+    * what is useEffect ?
+        => used for :
+            : API calls
+            : Fetching Data
+            : Timers 
+            : Lifecycle Methods
+
+syntax:
+    useEffect(() => {
+        
+    },[]);
+
+import {useEffect} from 'react';
+
+function demo(){
+    useEffect(() => {
+        console.log("Component loaded");
+    },[]);
+    return <h1>Hello</h1>;
+}
+
+Dependency Array:
+    Dependency                      Behavior
+    ------------------------------------------------------
+    []                              run once
+    [value]                         run when value changed 
+    No Dependency                   Run Every Render 
+
+
+API fetch Example : 
+
+demo DATA URL (https://jsonplaceholder.typicode.com/users)
+
+[{
+    "name" : "Mubarak M",
+    "First name" : "M"
+}]
+
+Assignment 6 – useRef
+Project: Auto Focus Input
+Objective
+
+Learn:
+
+DOM access
+References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Assignment 7: 
+
+React Router
+Project: Multi Page Website
+Objective
+
+Learn:
+    Routing
+    Navigation
+
+    src/
+    ├── pages/
+    │    ├── Home.jsx
+    │    ├── About.jsx
+    │    ├── Contact.jsx
+
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser (in npm command not working in Powershell )
+
+npm install react-router-dom 
+
+
+
+Modern project teams often struggle with fragmented communication, inefficient task management,
+and a lack of real-time visibility into project progress. Existing project management tools
+lack seamless real-time collaboration features and intelligent automation capabilities that
+enhance productivity. There is a clear demand for a dynamic, real-time collaborative platform
+that facilitates efficient task organisation and communication while leveraging AI to automate
+routine tasks, provide intelligent suggestions, and predict potential project 
+bottlenecks — improving overall project delivery and team synergy.
+
+
+
+7 . React Router (Advanced):
+    What is react Router ?
+    react route allows navigation between pages in a single page Application(SPA) 
+    without refreshing the browsewr
+
+
+why React router ?
+    without react router 
+        * entire page re-loads
+    with react router :
+        * smooth navigation
+        * Better performance
+        * Better User Experience
+
+    npm install react-router-dom
+
+    src/
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Dashboard.jsx
+│
+├── components/
+│   ├── Navbar.jsx
+│
+├── App.jsx
+
+Advantages of React Router
+
+    Fast Navigatioon             No Refresh 
+    Better UX                    Smooth Pages 
+    Dynamic URLs                 Flexible Routes 
+    Protected Pages              Security
+
+Dynamic Routing 
+
+<Route path="/student/:id" element={<Student />} />
+
+const { id } = useParsms(); // Access Route Parameter
+
+ // Nested Routing
+
+<Route path="/dashboard" element={<dashboard />} > 
+    <Route path="/profile" element={<Profile />} > 
+    <Route path="/settings" element={<Settings />} > 
+</Route>
+
+
+
+8. State Management 
+    what is state management
+        managing and sharing data between Components.
+        example :
+            user Login 
+            Shopping Cart 
+            Theme Mode
+            Notifications
+
+Problem Without State Management
+
+passing props deeply:
+App -> Parent -> Child -> SubChild
+
+this is called Prop Drilling
+
+solution :
+    Context API 
+    Redux
+
+9. React Context API 
+
+    What is Context API ?
+    used to shared the data globally withot passing props Manually.
+
+    Real Worls Example :
+        Application
+
+        Ecommerce           Cart
+        Banking             user Info
+        Dashboard           Theme
+        Social Media        Login state
+
+Context API Flow
+    Provider -> Components -> Consumer
+
+
+Advantages of Context API 
+
+Avoid Prop Drilling	        Cleaner code
+Global State	            Shared data
+Easy to Use	                Beginner friendly
+
+
+Limitations of Context API
+
+Large apps	                Hard to manage
+Frequent updates        	Performance issue
+
+10.Redux 
+    Redux is a Pridictable state Management library for Large Applications.
+
+why Redux :
+    Applications Become Large
+    Many components shared Data
+
+Redux Flow :
+    Component -> Action -> Reducer -> Store -> UI Update
+
+Redux Installation :
+    npm install redux react-redux @reduxjs/toolkit
+
+    src/
+│
+├── redux/
+│   ├── Store.js
+│   ├── CounterSlice.js
+
+
+
+Assignment
+
+    Create:
+    Redux counter app
+    Theme management 
+
+    diff b/w Context API vs Redux
+
+
+11. Socket.io (Real-Time Communication)
+        Socket.io enables :
+            Real-Time Communication
+            Between 
+            * client 
+            * Server
+
+backend :
+    npm install socket.io
+
+frontend :
+    npm install socket.io-client
+
+socket.io Architecture  
+    client <-> server 
+
+                User - A
+                    |
+             Frontend (react)
+                    |
+             socket.io (client)
+                    |
+             socket.io (Server)
+                    |
+             socket.io (client)
+                    |
+             Frontend (react)
+                    |
+                 User - B
+
+
+Backend folder
+    npm init -y 
+    npm install express socket.io
+    npm install express socket.io cors
+
+
+frontend folder 
+    open client project folder and run this commands (cd client)
+        npm create vite@latest client
+        npm install 
+        npm install socket.io-client
+
+=> Node Js :
+    open-source, cross platform javascript runtime environment 
+    that allows developers to execute javascript code outside the browser 
+
+=> Express Js: 
+
+    What is Express Js
+        express js is a lightweight web framework for Node.js that helps us build:
+            REST API's
+            Backend Servers
+            Authentication System 
+            Real-time Application
+            Full Stack Application
+
+express.js is backend framework most commonly used with Node.js in MERN Stack. 
+
+core Architecture and Lifecycle
+
+[Client Request] ──> [Middleware 1] ──> [Middleware 2] ──> [Route Handler] ──> [Client Response]
+
+without Express :
+    const http = require("http");
+
+    const server = http.createServer((req,res) => {
+        res.send("Hello World");
+    });
+    server.listen(5000);     // http://localhost:5000
+
+With Express :
+    const http = require("http");
+
+    const app = express();
+
+    app.get("/",(req,res) => {
+        res.send("Hello World");
+    });
+    server.listen(5000);
+
+    express make backend developement much easier
+
+why Express js ?
+    Advantage : 
+        Simple Routing
+            app.get("/")
+            app.post("/")
+            app.put("/")
+            app.delete("/")
+
+        Middleware :
+            Authentication 
+            Logging
+            Validation
+            Error Handling
+
+        REST API developement
+                Perfect for :
+                    React Frontend
+                    Mobile Application
+                    Third- Party Integrations
+
+        Fast Develeopment
+            less code 
+            more functionality
+
+HTTP Methods
+    GET             Fetch Data
+    POST            Insert Data
+    PUT             Update data
+    DELETE          Delete Data
+
+Get Request
+    app.get("/students",(res,req) =>{
+         res.send(("Student List"));
+    });
+
+    app.post("/students",(res,req) =>{
+         res.send(("Student Added"));
+    });
+
+    app.put("/students",(res,req) =>{
+         res.send(("Student updated"));
+    });
+
+    app.delete("/students",(res,req) =>{
+         res.send(("Student deleted"));
+    });
+
+ // Sending JSON Response
+
+    app.get("/student",(req,res) => {
+    res.json({
+        id: 1,
+        name:"Mubarak M",
+        course: "MERN"
+    });
+})
+
+
+// Route Parameters
+
+    app.get("/student/:id",(req,res) =>{
+        res.send(req.params.id)
+    });
+
+
+
+
+common codes :
+    
+    200     succses or ok
+    201     Created
+    400     Bad Request
+    401     Unauthorized
+    404     Not Found
+    500     Server error
+
+
+JWT (JSON WEB TOKEN) :
+    username : Mubarak 
+    password : 123456
+        if credentials are correct  
+            User Authenticated ✅
+        
+        if credentials are Wrong 
+            Authenticated Failed ❌
+
+
+Authentication :
+    Authorization determines what an Authenticate user can Access
+
+    Admin 
+      |-- Add User
+      |-- Delete User
+      |-- View Report
+
+    student
+      |-- View Profile
+      |-- View Course
+
+Authentication = Who are You?
+Authorization = What can you Access?
+
+JWT - JSON Web Token 
+        is secure Token generated by the Server after succsesful Login
+
+Why JWT ?
+
+without JWT 
+
+    user logs in
+        |
+    server remembers Session
+        |
+    need Session storage
+
+With JWT 
+    user logs in
+        |
+    server Creates Token
+        |
+    Client stores Token
+        |
+    client send Token With Request
+
+
+JWT Structure
+    JWT Contains 3 parts :
+
+        HEADER.PAYLOAD.SIGNATURE
+        xxxxx.yyyyyy.zzzzz
+
+HEADER :
+ Contains Algorithmm information :
+    {
+        "alg" :"HS256",
+        "typ":"JWT"
+    }
+PAYLOAD : contains user information
+    {
+        "id":101,
+        "username":"Mubarak"
+    }
+SIGNATURE : creating header payload and secret key
+    header
+      +
+    payload
+      +
+    secret Key
+
+used to verify tkoen authenticity
+
+              User
+                │
+                │ Login
+                ▼
+              Server
+                │
+                │ Verify Credentials
+                ▼
+              Generate JWT
+                │
+                ▼
+              Send Token
+                │
+                ▼
+              Browser Stores Token
+                │
+                ▼
+              Future Requests
+                │
+                ├── Token Attached
+                ▼
+              Server Verifies Token
+                |
+                |
+                ▼
+              Access Granted
+
+
+
+JWT Installation 
+    create Project :
+        npm init -y
+    
+    install Dependencies:
+        npm install express jsonwebtoken bcryptjs cors
+
+project Structure :
+    JWT-Project
+    |
+    
+    |-- middleware
+    |   |__ authMiddleware.js
+    |
+    |-- routes
+    |   |__ authRoutes.js
+    |
+    |-- controllers
+    |   |__ authController.js
+    |
+    |-- Server.js
+    |
+    |__ Package.json
+
+
+
+Capstone Project🚀
+
+Smart Student Learning & Placement Management System (MERN Stack)
+________________________________________
+Problem Statement:
+Develop a full-stack web application using the MERN Stack (MongoDB, Express.js, React.js, Node.js) to manage student learning, course tracking, and placement activities in a training institute.
+________________________________________
+Objective:
+To build a centralized platform where:
+•	Students can learn, track progress, and apply for jobs
+•	Trainers can manage courses and evaluate students
+•	Admin can monitor and control the system
+________________________________________
+User Roles:
+•	Admin: Manage users, courses, and job postings
+•	Trainer: Upload content, create assignments, evaluate students
+•	Student: Enroll in courses, track progress, submit assignments, apply for jobs
+
+
+
+
+Core Features:
+•	User Authentication (Login/Register with roles)
+•	Course Management (Create, enroll, view courses)
+•	Student Dashboard (Progress tracking)
+•	Assignment System (Create, submit, evaluate)
+•	Job Portal (Post and apply for jobs)
+________________________________________
+Technical Requirements:
+•	Frontend: React.js (Hooks, Router, Context API)
+•	Backend: Node.js, Express.js (REST APIs)
+•	Database: MongoDB
+•	Proper validation and clean UI    
