@@ -802,6 +802,111 @@ project Structure :
     |__ Package.json
 
 
+mongoDB with Mongoose( CRUD + Indexing + Aggregation)
+
+what is mongoDB?
+    MongoDB is a NoSQL Database.
+    Instead of sorting data in rows and columns like MySQL MongoDB stores data in:
+
+    Database
+    collection
+    Documentations
+
+    ex:-
+    {
+        "_id":"123",
+        "name":"Sheema",
+        "Age":"21"
+        "course":"MERN"
+    }
+
+//Difference between SQL and MongoDB
+
+    SQL           MongoDB
+
+    Database      Database
+    Table         collection
+    Rows          Document
+    Columns       Field
+
+=> What is Mongoose?
+      Mongoose is an ODM(object Data Modeling) library.
+    It helps:
+        - Create Schema
+        - Validate data
+        - perform CRUD operations
+        - create Relationships
+        - use Aggregation
+
+Installation : npm install mongoose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Capstone Project🚀
 
